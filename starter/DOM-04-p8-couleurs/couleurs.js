@@ -15,5 +15,9 @@ DOM - PREPA 8 : « Couleurs » :
 const couleurFond = prompt(`Quelle couleur de fond souhaitez vous ? (indiquez-lui qu'il doit vous fournir la couleur souhaitée sous son nom anglais ou bien en utilisant le format hexadécimal ou RGB)`);
 const couleurTexte = prompt(`Quelle couleur de texte souhaitez vous ? (indiquez-lui qu'il doit vous fournir la couleur souhaitée sous son nom anglais ou bien en utilisant le format hexadécimal ou RGB)`);
 
-document.body.style.color = couleurTexte;
-document.body.style.backgroundColor = couleurFond;
+
+const titreElts = document.querySelectorAll('h1');
+titreElts.forEach(titreElt=> {
+    titreElt.style.color = couleurTexte;
+    titreElt.style.backgroundColor = couleurFond;
+});
