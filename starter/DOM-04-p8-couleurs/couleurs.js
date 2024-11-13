@@ -11,3 +11,9 @@ DOM - PREPA 8 : « Couleurs » :
    (utilisez soit le nom anglais de la couleur, soit le format hexadécimal, soit le format RGB) :' ;
 2. Utilisez ces couleurs pour satisfaire les préférences de votre utilisateur
 */
+
+const couleurFond = prompt(`Quelle couleur de fond souhaitez vous ? (indiquez-lui qu'il doit vous fournir la couleur souhaitée sous son nom anglais ou bien en utilisant le format hexadécimal ou RGB)`);
+const couleurTexte = prompt(`Quelle couleur de texte souhaitez vous ? (indiquez-lui qu'il doit vous fournir la couleur souhaitée sous son nom anglais ou bien en utilisant le format hexadécimal ou RGB)`);
+
+document.body.style.color = couleurTexte;
+document.body.style.backgroundColor = couleurFond;

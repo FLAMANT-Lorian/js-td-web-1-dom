@@ -13,7 +13,9 @@ AIDES :
 */
 
 // Insérez votre code ici
+function afficherEnfant(){
 
+}
 
 
 

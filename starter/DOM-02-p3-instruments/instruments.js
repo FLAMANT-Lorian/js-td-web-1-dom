@@ -2,6 +2,7 @@
 /*
 SOURCE : https://github.com/oc-courses/javascript-web
 */
+
 /*
  DOM - PREPA 3 : « Instruments » : attributs et classes
 - Créez une fonction getInfosLiens qui doit afficher :
@@ -20,8 +21,36 @@ SOURCE : https://github.com/oc-courses/javascript-web
     - si l'élément d'id "contrebasse" possède la classe "cordes" (doit afficher "Aucun élément ne possède l'id contrebasse")
 */
 
+function getInfosLiens() {
+    const nbrAElt = document.getElementsByTagName('a').length;
+    if (nbrAElt > 0) {
+        console.log(nbrAElt)
+    } else {
+        console.log('Votre page ne contient pas de lien');
+    }
+    console.log(document.querySelector('li:first-of-type>a'));
+    console.log(document.querySelector('li:last-of-type>a'));
+}
 
+getInfosLiens();
 
+const ulElt = document.querySelector('ul');
+ulElt.insertAdjacentHTML('beforeend', '<li id="clavecin" class="cordes pincees">Le <a href="https://fr.wikipedia.org/wiki/Clavecin">clavecin</a></li>');
 
+function possede(idElement, classElt) {
+    const eltClass = document.getElementById(idElement);
+    if (eltClass) {
+        if (eltClass.classList.contains(classElt)) {
+            return true;
+        } else if (!(eltClass.classList.contains(classElt))) {
+            return false;
+        }
+    } else {
+        return `Aucun élément ne possède l'id '${idElement}' !`;
+    }
+}
 
-
+console.log(possede('saxophone', 'bois'));
+console.log(possede('saxophone', 'cuivre'));
+console.log(possede('trompette', 'cuivre'));
+console.log(possede('contrebasse', 'cordes'));

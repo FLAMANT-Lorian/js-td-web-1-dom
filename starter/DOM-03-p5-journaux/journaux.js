@@ -15,3 +15,12 @@ Il a sans doute été simplifié à outrance dans un souci
 de rendre la génération la plus simple possible en JS.
 TODO : améliorer le balisage HTML généré !!! */
 
+const journaux = ['http://lemonde.fr', 'http://lefigaro.fr', 'http://liberation.fr'];
+
+const divElt = document.getElementById('contenu');
+divElt.insertAdjacentHTML("afterbegin", '<ul></ul>');
+const ulElt = document.querySelector('ul');
+
+for (const journal of journaux) {
+    ulElt.insertAdjacentHTML('afterbegin', `<li><a href="${journal}">${journal}</a></li>`);
+}
